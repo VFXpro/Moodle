@@ -42,6 +42,8 @@ To get a complete list of outputs in json format use:
 az group deployment show --resource-group $MOODLE_RG_NAME --name $MOODLE_DEPLOYMENT_NAME --out json --query *.outputs
 ```
 
+TIP: If your resource group contains dashes, don't forget to add single quote before and after the name used as a variable in the string above.
+
 Individual outputs can be retrieved by filtering, for example, to get
 just the value of the `siteURL` use:
 
