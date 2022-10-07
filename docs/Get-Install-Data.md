@@ -39,14 +39,14 @@ The available output parameters are:
 To get a complete list of outputs in json format use:
 
 ```bash
-az group deployment show --resource-group $MOODLE_RG_NAME --name $MOODLE_DEPLOYMENT_NAME --out json --query *.outputs
+az deployment group show --resource-group $MOODLE_RG_NAME --name $MOODLE_DEPLOYMENT_NAME --out json --query *.outputs
 ```
 
 Individual outputs can be retrieved by filtering, for example, to get
 just the value of the `siteURL` use:
 
 ``` bash
-az group deployment show --resource-group $MOODLE_RG_NAME --name $MOODLE_DEPLOYMENT_NAME --out json --query *.outputs.siteURL.value
+az deployment group show --resource-group $MOODLE_RG_NAME --name $MOODLE_DEPLOYMENT_NAME --out json --query *.outputs.siteURL.value
 ```
 
 However, since we are reqeusting JSON output (the default) the value
@@ -54,7 +54,7 @@ is enclosed in quotes. In order to remove these we can output as a tab
 separated list (TSV):
 
 ``` bash
-az group deployment show --resource-group $MOODLE_RG_NAME --name $MOODLE_DEPLOYMENT_NAME --out tsv --query *.outputs.siteURL
+az deployment group  show --resource-group $MOODLE_RG_NAME --name $MOODLE_DEPLOYMENT_NAME --out tsv --query *.outputs.siteURL
 ```
 
 Now we can assign individual values to environment variables, for example:
